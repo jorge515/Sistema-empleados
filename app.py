@@ -6,16 +6,17 @@ from flaskext.mysql import MySQL
 app=Flask(__name__)
 
 mysql=MySQL()
+
 app.config['MYSQL_DATABASE_HOST']='localhost'
 app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
-app.config['MYSQL_DATABASE_DB']='sistema122'
+app.config['MYSQL_DATABASE_DB']='sistema2122'
 mysql.init_app(app)
 
 @app.route('/',methods=['GET','POST'])
-def home():
-    sql= "INSERT INTO `empleados`()"
-    conn= mysql.connet()
+def index():
+    sql= "INSERT INTO `empleados` (`id`, `nombre`, `correo`, `foto`) VALUES (NULL, 'Gaby', 'mgp_20@GMAIL.COM', 'FORO')";
+    conn= mysql.connect()
     cursor=conn.cursor()
     cursor.execute(sql)
     conn.commit()

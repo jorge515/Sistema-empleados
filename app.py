@@ -10,7 +10,7 @@ mysql=MySQL()
 app.config['MYSQL_DATABASE_HOST']='localhost'
 app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
-app.config['MYSQL_DATABASE_DB']='sistema2122'
+app.config['MYSQL_DATABASE_DB']='sistemas2122'
 mysql.init_app(app)
 
 @app.route('/',methods=['GET','POST'])

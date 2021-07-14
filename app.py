@@ -28,6 +28,21 @@ def index():
     return render_template('empleados/index.html')
     #return render_template('index.html')
 
+
+@app.route('/create')
+def create():
+   return render_template('empleados/create.html')
+
+@app.route('/store',method=['POST'])
+def storage():
+   _nombre=request.form('txtNombre')
+   _correo=request.form('txtCorreo')
+   _foto=request.form('txtFoto')
+   
+   sql= "INSERT INTO `empleados` (`id`, `nombre`, `correo`, `foto`) VALUES (NULL, 'Gaby', 'mgp_20@GMAIL.COM', 'FORO')";
+
+
+
 if __name__ == '__main__':
     #DEBUG is SET to TRUE. CHANGE FOR PROD
     app.run(port=5000,debug=True)
